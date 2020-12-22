@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Closures Activity #1</title>
+  </head>
+  <body>
+    <h1>Intro to Closure</h1>
+    <h2>Open the Browser's DevTools to see the output!</h2>
+    <p>
+      Everything you need for this lesson is contained in the script tags of
+      this page.
+    </p>
+    <p>Remember you can refresh the browser to run updated code.</p>
+
+    <script>
+      /* 
+        Compare the code in the first approach to the code in the second approach
+        Looking at the output in the console, you should see the same result for both
+        What is happening in the second approach?
+        Can you think of any reason why we might want to use one over the other?
+      */
+
+      // First Approach
+      function createMember(firstName, lastName) {
+        return firstName + " " + lastName;
+      }
+
+      var member1 = createMember("Jimmy", "Smits");
+
+      console.log(member1);
+
+      // Second Approach
+      function createMemberAdder(lastName) {
+        return function (firstName) {
+          return firstName + " " + lastName;
+        };
+      }
+
+      var addMember = createMemberAdder("Smits");
+
+      var member2 = addMember("Jimmy");
+
+      console.log(member2);
+    </script>
+  </body>
+</html>
