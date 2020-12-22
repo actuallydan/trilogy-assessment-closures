@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Closures Activity #3 - Solved</title>
+  </head>
+  <body>
+    <h1>Cats and Closure</h1>
+    <h2>Open the Browser's DevTools to see the output!</h2>
+    <p>
+      Everything you need for this lesson is contained in the script tags of
+      this page.
+    </p>
+    <p>Remember you can refresh the browser to run updated code.</p>
+
+    <script>
+      // This closure function is partially written for you.
+      // The outer function is called petMaker and returns an inner function we can use to name our pets
+      function petMaker(species) {
+        return function inner(name) {
+          // 1. & 2. Implement your solution here!
+          return {
+            species: species,
+            name: name,
+          };
+        };
+      }
+
+      // 3. Once implemented, call the petMaker function to create a catGenerator function
+      var catGenerator = petMaker("cat");
+
+      // 4. Create some cats with the catGenerator function
+      var cat1 = catGenerator("Fluffy");
+      var cat2 = catGenerator("Grunkle");
+      var cat3 = catGenerator("Steve");
+      var cat4 = catGenerator("Sam");
+
+      // 5. Log them to the console
+      console.log(cat1);
+      console.log(cat2);
+      console.log(cat3);
+      console.log(cat4);
+    </script>
+  </body>
+</html>
