@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Closures Activity #2</title>
+  </head>
+  <body>
+    <h1>Closures At Glance</h1>
+    <h2>Open the Browser's DevTools to see the output!</h2>
+    <p>
+      Everything you need for this lesson is contained in the script tags of
+      this page.
+    </p>
+    <p>Remember you can refresh the browser to run updated code.</p>
+
+    <script>
+      // This function takes advantage of closures to help us from re-writing the family members' last name
+      // We create the function that does some of the work for us in generating our family member
+      function createMemberAdder(lastName) {
+        return function (firstName) {
+          return firstName + " " + lastName;
+        };
+      }
+
+      // addMember will be a function that stores the last name "Smits" for us
+      // This way, we can keep calling addMember with just the family member's first name
+      var addMember = createMemberAdder("Smits");
+
+      var member1 = addMember("Jimmy");
+      var member2 = addMember("Harry");
+      var member3 = addMember("Stacey");
+      var member4 = addMember("Carroll");
+
+      // We should expect this to output the first and last names for all these members
+      console.log(member1);
+      console.log(member2);
+      console.log(member3);
+      console.log(member4);
+    </script>
+  </body>
+</html>
