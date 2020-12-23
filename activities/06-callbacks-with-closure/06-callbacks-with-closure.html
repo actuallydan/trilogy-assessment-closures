@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Closures Activity #6</title>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        margin: auto;
+        text-align: center;
+      }
+      #root {
+        padding: 2em 0.5em;
+        margin: 1em auto;
+        color: #000000;
+        border: 1px solid #000000;
+        /*
+          Clamp is great!
+          But don't worry about it here.
+          If you're interested: https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()
+         */
+        max-width: clamp(100px, 40vw, 500px);
+      }
+      .change-border-btn {
+        padding: 2em 0.5em;
+        margin: 0.5em auto;
+        color: #000000;
+        max-width: clamp(100px, 40vw, 500px);
+        cursor: pointer;
+        transition: all 0.5s ease;
+      }
+      .change-border-btn:hover {
+        transform: scale(1.01);
+      }
+
+      #btn-1 {
+        border: 10px dashed#0090ff;
+      }
+      #btn-2 {
+        border: 10px double #006d0f;
+      }
+      #btn-3 {
+        border: 10px outset #ff2f2f;
+      }
+      #btn-4 {
+        border: 10px dotted #c63bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Closures in callbacks</h1>
+
+    <div id="root">Press buttons to change my border!</div>
+    <div class="change-border-btn" id="btn-1">#0090ff</div>
+    <div class="change-border-btn" id="btn-2">#006d0f</div>
+    <div class="change-border-btn" id="btn-3">#ff2f2f</div>
+    <div class="change-border-btn" id="btn-4">#c63bff</div>
+
+    <script>
+      // This closure function targets an element whose border you want to change,
+      // and returns a function that copies the styles from a second element based on some event
+      function makeBorderizer(element) {
+        return function (event) {
+          element.style.border = getComputedStyle(event.target).border;
+        };
+      }
+
+      // In our example we target our "Press buttons to change my border!" div
+      // Now we can grab the border styles of any element and apply it to this element
+      var borderizeTarget = makeBorderizer(document.getElementById("root"));
+
+      // Since our three buttons have some swanky styles, lets make each of them update the root element
+      // You can use our borderizeTargetFunction to respond to any event, so we'll use onclick
+      // Remember that event handlers always pass an event object to whatever function you provide
+      document.getElementById("btn-1").onclick = borderizeTarget;
+      document.getElementById("btn-2").onclick = borderizeTarget;
+      document.getElementById("btn-3").onclick = borderizeTarget;
+
+      // You can also target the event with addEventListener()
+      document
+        .getElementById("btn-4")
+        .addEventListener("click", borderizeTarget);
+
+      // You can also use the whole body as a target for our inner function's event handler!
+      // var borderizeWindow = makeBorderizer(document.body);
+
+      // document.getElementById("btn-1").onclick = borderizeWindow;
+      // document.getElementById("btn-2").onclick = borderizeWindow;
+      // document.getElementById("btn-3").onclick = borderizeWindow;
+      // document.getElementById("btn-4").onclick = borderizeWindow;
+    </script>
+  </body>
+</html>
