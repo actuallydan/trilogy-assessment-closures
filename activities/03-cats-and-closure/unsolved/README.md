@@ -2,7 +2,7 @@
 
 ## Instructions
 
-- Open `03-you-can-closure-too.html` in Visual Studio Code and inspect the `<script>`
+- Open `03-cats-and-closure.html` in Visual Studio Code and inspect the `<script>`
 
 - The provided code partially implements a closure function that lets you create and name pets.
 

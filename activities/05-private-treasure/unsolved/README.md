@@ -14,11 +14,11 @@ Open `05-privates-of-the-caribbean.html` in Visual Studio Code and inspect the `
 
 2. Inside this function, create an object called `treasures`. This object should be empty at first.
 
-3. The closure function should also have a variable called `numberOfTreasures` that will serve as a record of how many treasures are in the `treasures` object.
+3. The closure function should also have a variable called `numberOfTreasures` that will serve as a record of how many treasures are in the `treasures` object, it should start as 0.
 
 4. The function should return an object with three methods: `setTreasure`, `getTreasures`, and `countTreasures`.
 
-5. The `setTreasure` function should take two parameters, a `location` and a `hint`. Update the treasures object with the key of `location` and set the value to `hint`. Also add 1 to the `numberOfTreasures`
+5. The `setTreasure` function should take two parameters, a `location` and a `hint`. Update the treasures object with the key of `location` and set the value to `hint`. Also, add 1 to the `numberOfTreasures`
 
 e.g.
 
@@ -27,7 +27,7 @@ treasures["Cayman Islands"] = "beneath a tiny palm tree";
 //        ^ location           ^ hint
 ```
 
-6. `getTreasures` should return the treasures object.
+6. `getTreasures` should return the `treasures` object.
 
 7. `countTreasures` should return the `numberOfTreasures` variable
 
@@ -42,7 +42,7 @@ treasures["Cayman Islands"] = "beneath a tiny palm tree";
 
 **Bonus**
 
-In the `getTreasures` instead of returning the treasures variable, return an array containing only the locations and not the hints. Your output would then be:
+In the `getTreasures` function, instead of returning the treasures variable, return an array containing only the locations and not the hints. Your output would then be:
 
 ```javascript
 > ["Coney Island", "Loch Ness"]
@@ -50,3 +50,5 @@ In the `getTreasures` instead of returning the treasures variable, return an arr
 > true
 > true
 ```
+
+**Hint**: Refer to [MDN Object.keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
