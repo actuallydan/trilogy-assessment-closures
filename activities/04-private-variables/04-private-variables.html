@@ -17,7 +17,8 @@
       // Instead of a function returning a function, this function will return an object
       // The closure here is that our object has functions that use the local (outer function's) scope
       function makeBoxOfSecrets(initialSecret) {
-        // Everything in this function's scope is inaccessible unless we return it with the inner object
+        // Everything in this function's scope is inaccessible outside of it
+        // unless we return it with the `inner` object
         var secrets = [initialSecret];
 
         var inner = {
@@ -52,6 +53,8 @@
       // console.log(mySecrets.secrets);
 
       // The only way to get this value is using the built in function
+      // This prevents us from modifying the internal values directly
+      // and allows us to force a specific pattern of usage
       console.log(mySecrets.tellMeYourSecrets());
     </script>
   </body>

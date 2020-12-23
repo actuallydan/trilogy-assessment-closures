@@ -22,8 +22,10 @@ Note that the black box element has already been stored in a variable `outputBox
 
 1. Create a closure function whose outer function takes in an element we want to dump some information
 
-2. Return a function that takes an event, and modifies the earlier target element's text based on the dimensions of the `event.target`. **Hint** You may want to refer to [this resource](https://www.javascripttutorial.net/javascript-dom/javascript-width-height/) for getting the dimensions from an event handler
+2. Return a function that takes an event, and modifies the earlier element's text based on the dimensions of the `event.target`. **Hint** You may want to refer to [this resource](https://www.javascripttutorial.net/javascript-dom/javascript-width-height/) for getting the dimensions from an event handler
 
 3. Use our closure function to generate a function that we can use as an event handler
 
 4. Attach the event handler to the window's `mouseover` event.
+
+Check out [the MDN reference for mouseover](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event) if you need help on item 4.

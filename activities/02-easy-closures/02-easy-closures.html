@@ -15,15 +15,18 @@
 
     <script>
       // This function takes advantage of closures to help us from re-writing the family members' last name
-      // We create the function that does some of the work for us in generating our family member
+      // We create the function that does some of the work for us in generating our family member...
       function createMemberAdder(lastName) {
+        // ...and return a function that brings it together when we're ready to use it
+        // With closures, an inner function can "remember" variables from where it was returned
+        // In actuality this is just lexical scope in action, functions can access variables outside and above themselves
         return function (firstName) {
           return firstName + " " + lastName;
         };
       }
 
       // addMember will be a function that stores the last name "Smits" for us
-      // This way, we can keep calling addMember with just the family member's first name
+      // This way, we can keep calling addMember with just the family members' first names
       var addMember = createMemberAdder("Smits");
 
       var member1 = addMember("Jimmy");
@@ -31,7 +34,7 @@
       var member3 = addMember("Stacey");
       var member4 = addMember("Carroll");
 
-      // We should expect this to output the first and last names for all these members
+      // We should expect this to print out the first and last names for all these members
       console.log(member1);
       console.log(member2);
       console.log(member3);
