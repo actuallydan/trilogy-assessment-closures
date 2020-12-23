@@ -2,7 +2,7 @@
 
 In this exercise we'll use a bootstrap template from [https://github.com/startbootstrap/startbootstrap-freelancer](https://github.com/startbootstrap/startbootstrap-freelancer), and see how we can use closures to create a function that helps us identify the dimensions of any element on the page, just by hovering over them.
 
-Pretend you're building an chrome extension for designers, this extension will display a black box in the corner and will display the width and height of any element on the page when they hover over it.
+Pretend you're building a chrome extension for designers. This extension will display a black box in the corner and will display the width and height of any element on the page when they hover over it.
 
 You chose to build it with closures since you want to demonstrate how clever you are, and you want to make the code reusable for other developers.
 

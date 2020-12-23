@@ -18,7 +18,7 @@ By this point, students should be able to:
 - Understand that variables created inside of functions are not accessible outside of them
 - Manipulate HTML elements with the DOM API
 
-`Summary: Complete activities 1-6 in activities folder`
+`Summary: Complete activities 1-7 in activities folder`
 
 ## Instructor Notes
 
