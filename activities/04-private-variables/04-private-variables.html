@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Closures Activity #4</title>
+  </head>
+  <body>
+    <h1>"Private" Variables in Closures</h1>
+    <h2>Open the Browser's DevTools to see the output!</h2>
+    <p>
+      Everything you need for this lesson is contained in the script tags of
+      this page.
+    </p>
+    <p>Remember you can refresh the browser to run updated code.</p>
+
+    <script>
+      // Instead of a function returning a function, this function will return an object
+      // The closure here is that our object has functions that use the local (outer function's) scope
+      function makeBoxOfSecrets(initialSecret) {
+        // Everything in this function's scope is inaccessible unless we return it with the inner object
+        var secrets = [initialSecret];
+
+        var inner = {
+          tellMeYourSecrets: function () {
+            return secrets;
+          },
+          addSecret: function (secret) {
+            secrets.push(secret);
+            console.log("You're secret is (somewhat) safe with me.");
+          },
+        };
+        return inner;
+      }
+
+      var mySecrets = makeBoxOfSecrets("Pineapple on pizza is werid.");
+
+      // What should this print out in the console?
+      console.log(mySecrets);
+
+      mySecrets.addSecret(
+        "I never finished The Godfather because it was too slow."
+      );
+
+      // What about now?
+      console.log(mySecrets);
+
+      // Try the next two console.logs one at at time, the code will throw an error and not print out anything else
+      // Can we call secrets?
+      // console.log(secrets);
+
+      // Can we call mySecrets like an object?
+      // console.log(mySecrets.secrets);
+
+      // The only way to get this value is using the built in function
+      console.log(mySecrets.tellMeYourSecrets());
+    </script>
+  </body>
+</html>
